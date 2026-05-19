@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="style.css">
+
+
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">Ваше Имя</div>
+        <ul class="nav-links">
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Главный экран (Hero) -->
+    <section class="hero">
+        <h1>Привет, я <span>Ваше Имя</span></h1>
+        <h2>Веб-разработчик и дизайнер</h2>
+        <a href="#contact" class="cta-btn">Связаться со мной</a>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="about">
+        <h2>Обо мне</h2>
+        <p>Я увлечённый веб-разработчик, создающий современные и удобные интерфейсы. Владею HTML, CSS, JavaScript и современными фреймворками. Люблю решать интересные задачи и создавать красивые сайты.</p>
+    </section>
+
+    <!-- Проекты -->
+    <section id="projects" class="projects">
+        <h2>Мои проекты</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://placehold.co/300x200/E0E0E0/333333?text=Project+1" alt="Проект 1">
+                <h3>Проект 1</h3>
+                <p>Краткое описание первого проекта. Это может быть сайт-визитка или приложение.</p>
+                <a href="#" class="card-btn">Подробнее</a>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/300x200/E0E0E0/333333?text=Project+2" alt="Проект 2">
+                <h3>Проект 2</h3>
+                <p>Краткое описание второго проекта. Это может быть сайт-визитка или приложение.</p>
+                <a href="#" class="card-btn">Подробнее</a>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/300x200/E0E0E0/333333?text=Project+3" alt="Проект 3">
+                <h3>Проект 3</h3>
+                <p>Краткое описание третьего проекта. Это может быть сайт-визитка или приложение.</p>
+                <a href="#" class="card-btn">Подробнее</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <h2>Связаться со мной</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <textarea placeholder="Ваше сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <p class="success-message" style="display: none;">Спасибо за сообщение! Я скоро отвечу.</p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Ваше Имя. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
