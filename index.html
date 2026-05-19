@@ -58,13 +58,13 @@
     <!-- Контакты -->
     <section id="contact" class="contact">
         <h2>Связаться со мной</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="email" placeholder="Ваш email" required>
-            <textarea placeholder="Ваше сообщение" required></textarea>
+        <form id="contact-form" action="sendmail.php" method="post">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <textarea name="message" placeholder="Ваше сообщение" required></textarea>
             <button type="submit">Отправить</button>
         </form>
-        <p class="success-message" style="display: none;">Спасибо за сообщение! Я скоро отвечу.</p>
+        <p id="success-message" class="success-message" style="display: none;">✅ Сообщение успешно отправлено!</p>
     </section>
 
     <footer class="footer">
