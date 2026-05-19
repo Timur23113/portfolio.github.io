@@ -1,31 +1,31 @@
-// Бургер-меню для мобильных устройств
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
-const links = document.querySelectorAll('.nav-links li');
+// --- ЛОГИКА ФОРМЫ КОНТАКТОВ (ДЛЯ PHP) ---
+const contactForm = document.getElementById('contact-form');
+const successMessage = contactForm.querySelector('.success-message');
 
-burger.addEventListener('click', () => {
-     navLinks.classList.toggle('active');
-});
-// Закрытие меню при клике на ссылку (для мобильных)
-links.forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-
-// Обработка формы обратной связи (без отправки на сервер)
-const form = document.getElementById('contact-form');
-const successMessage = document.querySelector('.success-message');
-
-form.addEventListener('submit', function(e) {
-     e.preventDefault();
-     
-     // Здесь можно добавить отправку на сервер (например, через fetch)
-     
-     form.style.display = 'none';
-     successMessage.style.display = 'block';
-     
-     // Сброс формы через несколько секунд
-     setTimeout(() => {
-         successMessage.style.display = 'none';
-         form.style.display = 'flex';
-         form.reset();
-     }, 4000);
+    // Используем Fetch для отправки данных в наш PHP-скрипт
+    fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm)
+    })
+    .then(response => response.text()) // Получаем ответ от сервера (success или error)
+    .then(data => {
+        if (data === 'success') {
+            contactForm.style.display = 'none';
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                contactForm.style.display = 'flex';
+                contactForm.reset();
+            }, 4000);
+        } else {
+            alert('Произошла ошибка при отправке. Попробуйте позже.');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Проблемы с соединением.');
+    });
 });
